@@ -1,5 +1,5 @@
 # OpenWrt 配置备忘录
-> 文件名：`openwrt-configuration-notes.md`
+> 文件名：`openwrt-configuration-notes.md`，[网络拓扑图](openwrt-network-topology.png)
 
 ## 1、配置时区和NTP服务器，让路由器时间准确，以免影响基于时间控网的准确性
 关联文件：`/etc/config/system`
