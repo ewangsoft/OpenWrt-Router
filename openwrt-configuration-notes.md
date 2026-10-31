@@ -210,7 +210,7 @@ list server ntp.ntsc.ac.cn   #国家授时中心
     - 网桥接口`br-wlan`：端口`wlan21、wlan51`
     - 网桥接口`br-wan`：端口`eth1、lan1(for CNC)`
 2. 网桥接口`br-lan、br-ke、br-shu、br-wan`启用`IGMP嗅探和多播支持`
-3. 网桥接口`br-wan`：启用`混杂模式`和其端口eth1和lan1启用`始终多播路由`
+3. 网桥接口`br-wan`：<mark>其端口eth1和lan1启用`始终多播路由`</mark>
 4. 光猫不支持向LAN端添加静态路由，所以需要将光猫`LAN口`的掩码设置为`255.255.0.0`，这样的话，对光猫来说，OpenWrt路由器的各个网段将视为自己LAN口同网段，此时需要`OpenWrt开启arp代理功能`才可保证OpenWrt的各网段以路由转发方式和光猫通信：
     将下面配置添加到 `/etc/sysctl.conf`
     ```
