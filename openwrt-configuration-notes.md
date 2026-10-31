@@ -226,7 +226,7 @@ list server ntp.ntsc.ac.cn   #国家授时中心
     - `Shu2`接口：`IP=192.168.91.1/24`
     - `Wlan`接口：`IP=192.168.69.1/24`
     - `Wan`接口：`IP=192.168.1.254/24`（提供DHCPv4 Server）
-    - `wan6`接口：`dhcp6客户端`（当`wan接口提供DHCPv4 Server`时，`/etc/config/dhcp中wan6节一定不能有option ignore '1'`）
+    - `wan6`接口：`dhcp6客户端`<mark>（当`wan接口提供DHCPv4 Server`时，`/etc/config/dhcp中wan6节一定不能有option ignore '1'`）</mark>
 2. lan、ke、shu、wan的IPv6中继配置：
     - `wan`设置为`指定的主接口`
     - `lan、ke、shu、wan接口`的`RA服务`为`中继模式`、`NDP代理`为`中继模式`
