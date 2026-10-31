@@ -1,3 +1,9 @@
+# 阻止来自两个不同 ISP 的组播流量互相抵达对方网络：Prevent multicast traffic from two different ISPs from reaching each other
+nft add table bridge filter
+nft add chain bridge filter forward { type filter hook forward priority 0 \; }
+nft add rule bridge filter forward ip saddr 10.0.0.0/16 ip daddr 224.0.0.0/4 oifname "lan1" drop
+nft add rule bridge filter forward ip saddr 10.253.0.0/16 ip daddr 224.0.0.0/4 oifname "eth1" drop
+
 # 指定接口禁用IPv6：Wireless Interface Forbid IPv6
 ebtables -I FORWARD -o wlan21 -p ipv6 -j DROP
 ebtables -I FORWARD -o wlan22 -p ipv6 -j DROP
