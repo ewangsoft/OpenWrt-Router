@@ -208,3 +208,11 @@ config rule
 	option priority '9'
 	option in 'wan'
 	option src '0.0.0.0/0'
+
+config device
+	option name 'eth1'
+	option multicast_router '2'
+
+config device
+	option name 'lan1'
+	option multicast_router '2'
